@@ -4,7 +4,7 @@ Londonborough <- st_read("///Users/lwj/Desktop/statistical-gis-boundaries-london
 OSM <- st_read("///Users/lwj/Desktop/greater-london-latest-free/gis_osm_pois_a_free_1.shp")%>%
   st_transform(.,27700)%>%
   dplyr::filter(fclass == 'hotel')#在fclass列只保留hotel的数据
-join_example <-  st_join(Londonborough, OSM)
+join_example <-  st_join(Londonborough, OSM)#st_join=left jion,保留左侧数据集数据
 head(join_example)
 library(sf)
 library(tmap)
